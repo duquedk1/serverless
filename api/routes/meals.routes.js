@@ -1,6 +1,7 @@
+import express from "express"
 import Meals from "../models/Meals";
 
-const router = app.Router();
+const router = express.Router();
 
 router.get("/", (req, res) => {
   Meals.find()

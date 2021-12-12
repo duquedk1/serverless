@@ -1,6 +1,8 @@
+import express from "express"
+
 import Orders from "../models/Orders";
 
-const router = app.Router();
+const router = express.Router();
 
 router.get("/", (req, res) => {
   Orders.find()
