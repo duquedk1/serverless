@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
+import meals from "./routes/meals.routes"
+import orders from "./routes/orders.routes"
 
 const app = express();
 
@@ -12,8 +14,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true,
 });
 
-app.get("*", (req, res) => {
-  res.send("Chanchito feliz");
-});
+app.use('/api/meals', meals)
+app.use('/api/orders', orders)
 
 export default app;
