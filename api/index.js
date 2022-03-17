@@ -3,6 +3,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import meals from "./routes/meals.routes"
 import orders from "./routes/orders.routes"
+import auth from "./routes/auth.routes"
+
 
 const app = express();
 
@@ -16,5 +18,6 @@ mongoose.connect(process.env.MONGO_URI, {
 
 app.use('/api/meals', meals)
 app.use('/api/orders', orders)
+app.use('/api/auth', auth)
 
 export default app;
